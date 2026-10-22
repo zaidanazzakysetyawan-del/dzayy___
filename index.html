@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nama Kamu – Mahasiswa</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;800&family=Figtree:wght@400;600;700&display=swap">
+<style>
+:root{--paper:#f7f4ff;--text:#1d1730;--edge:#1d1730;--ink:#1d1730;
+--c1:#ff5d8f;--c2:#ffc933;--c3:#2ed3a0;--c4:#4cc3ff;--c5:#9b7bff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#150f26;--text:#f4efff;--edge:#f4efff}}
+:root[data-theme="dark"]{--paper:#150f26;--text:#f4efff;--edge:#f4efff}
+:root[data-pal="1"]{--c1:#ff7a3d;--c2:#ffd166;--c3:#06d6a0;--c4:#b388ff;--c5:#ef476f}
+:root[data-pal="2"]{--c1:#00c2c7;--c2:#ffe066;--c3:#ff8fab;--c4:#5b8cff;--c5:#7ae582}
+:root[data-pal="3"]{--c1:#8ce04f;--c2:#ffb703;--c3:#c77dff;--c4:#2ec4b6;--c5:#ff6b6b}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);font:400 1.05rem/1.65 'Figtree',system-ui,Arial,sans-serif;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:'Syne','Arial Black',Arial,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 1.25rem}
+.top{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 0;gap:1rem}
+.top b{font:800 1.2rem 'Syne',Arial,sans-serif}
+.pal{border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:99px;padding:.35rem .9rem .35rem .6rem;font-weight:700;display:flex;gap:.5rem;align-items:center}
+.pal i{display:flex}.pal i s{width:14px;height:14px;border-radius:50%;margin-left:-4px;border:2px solid var(--ink)}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:2rem;align-items:center;padding:1.5rem 0 3rem}
+.hi{font:600 1.2rem 'Syne',Arial,sans-serif;margin:0}
+h1{font-size:clamp(3.2rem,10vw,6.4rem);line-height:.92;font-weight:800;margin:.2rem 0 1rem;letter-spacing:-.03em}
+h1 span{display:inline-block;transition:transform .25s,color .25s;animation:drop .6s both;animation-delay:calc(var(--i)*55ms)}
+h1 span:hover{transform:translateY(-.12em) rotate(-8deg)}
+h1 span:nth-child(5n+1):hover{color:var(--c1)}h1 span:nth-child(5n+2):hover{color:var(--c2)}h1 span:nth-child(5n+3):hover{color:var(--c3)}h1 span:nth-child(5n+4):hover{color:var(--c4)}h1 span:nth-child(5n):hover{color:var(--c5)}
+@keyframes drop{from{opacity:0;transform:translateY(-.6em) rotate(8deg)}}
+.type{font-size:1.3rem;min-height:2.4em;margin:0 0 1.4rem;max-width:30rem}
+.type::after{content:"";border-right:3px solid var(--c1);margin-left:3px}
+.btn{display:inline-block;border:3px solid var(--ink);border-radius:14px;padding:.6rem 1.1rem;font:700 1rem 'Syne',Arial,sans-serif;text-decoration:none;color:var(--ink);box-shadow:4px 4px 0 var(--edge);transition:transform .15s,box-shadow .15s;margin:0 .5rem .6rem 0}
+.btn:hover{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--edge)}
+.b1{background:var(--c2)}.b2{background:#fff}
+.stage{position:relative;justify-self:center;width:100%;max-width:340px;padding:1rem}
+.stage::before,.stage::after{content:"";position:absolute;border-radius:50%;border:3px solid var(--ink);z-index:0}
+.stage::before{width:120px;height:120px;background:var(--c3);top:-10px;right:-6px}
+.stage::after{width:70px;height:70px;background:var(--c1);bottom:-6px;left:-4px}
+.id{position:relative;z-index:1;background:#fff;color:var(--ink);border:3px solid var(--ink);border-radius:22px;overflow:hidden;transform:rotate(-3deg);box-shadow:8px 8px 0 var(--c5);transition:transform .3s}
+.id:hover{transform:rotate(0)}
+.id .bar{background:var(--c4);border-bottom:3px solid var(--ink);padding:.4rem 1rem;font:800 .95rem 'Syne',Arial,sans-serif;display:flex;justify-content:space-between}
+.id .row{display:flex;gap:1rem;padding:1rem;align-items:center}
+.avatar{flex:none;width:92px;height:116px;border-radius:12px;border:3px solid var(--ink);background:var(--c2);display:grid;place-items:center;overflow:hidden;position:relative;cursor:pointer;text-align:center}
+.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.avatar img[hidden],.avatar span[hidden]{display:none}
+.avatar span{font:700 .8rem/1.25 'Figtree',Arial,sans-serif;padding:.3rem}
+.avatar .sr{position:absolute;inset:0;opacity:0;width:100%;height:100%;cursor:pointer}
+.avatar:focus-within{outline:3px solid var(--ink);outline-offset:3px}
+.id dl{margin:0;font-size:.92rem;line-height:1.4}.id dt{font-size:.75rem;opacity:.65}.id dd{margin:0 0 .4rem;font-weight:700}
+.panel{color:var(--ink);border:3px solid var(--ink);box-shadow:8px 8px 0 var(--edge);padding:2rem 1.5rem;margin:2.2rem 0}
+.p1{background:var(--c2);border-radius:36px 12px 36px 12px}.p2{background:var(--c4);border-radius:12px 36px 12px 36px}
+.p3{background:var(--c3);border-radius:36px 36px 12px 36px}.p4{background:var(--c1);border-radius:12px 36px 36px 36px}
+.p5{background:var(--c5);border-radius:36px 12px 36px 36px}.p6{background:var(--c2);border-radius:36px 36px 36px 12px}
+h2{display:inline-block;background:#fff;border:3px solid var(--ink);border-radius:14px;padding:.1em .6em;margin:0 0 1.4rem;font-size:clamp(1.6rem,4vw,2.3rem);transform:rotate(-2deg)}
+.p2 h2,.p4 h2{transform:rotate(1.5deg)}
+.card{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:1rem 1.1rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem}
+h3{margin:0 0 .3rem;font-size:1.15rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
+.chips button,.tabs button{border:3px solid var(--ink);background:#fff;color:var(--ink);border-radius:99px;padding:.3rem 1rem;font:700 1rem 'Syne',Arial,sans-serif}
+.chips button:hover{background:var(--c1)}
+[aria-pressed="true"],[aria-selected="true"]{background:var(--c1)!important}
+.say{min-height:4.5rem;margin:0}
+.flip{perspective:900px;height:200px;border:0;background:none;padding:0;text-align:left}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.flip[aria-pressed="true"]{background:none!important}
+.flip[aria-pressed="true"] .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;border:3px solid var(--ink);border-radius:16px;padding:1rem 1.1rem;color:var(--ink)}
+.flip .b{transform:rotateY(180deg);background:var(--c2)}
+.flip small{display:block;margin-top:.6rem;font-weight:700;opacity:.7}
+.skill{margin-bottom:1rem}.skill .l{display:flex;justify-content:space-between;font-weight:700}
+.meter{height:16px;background:#fff;border:3px solid var(--ink);border-radius:99px;overflow:hidden;margin-top:.3rem}
+.meter i{display:block;height:100%;width:0;background:var(--c1);border-right:3px solid var(--ink);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.go .meter i{width:var(--w)}
+.skill:nth-child(2) i{background:var(--c2)}.skill:nth-child(3) i{background:var(--c4)}.skill:nth-child(4) i{background:var(--c5)}
+.tabs{display:flex;gap:.6rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.list{display:grid;gap:.8rem}.list[hidden]{display:none}
+summary{cursor:pointer;font-weight:700}summary b{font-family:'Syne',Arial,sans-serif;background:var(--c3);border:2px solid var(--ink);border-radius:8px;padding:0 .4rem;margin-right:.5rem;font-size:.9rem}
+details p{margin:.5rem 0 0}
+.goal{display:flex;gap:.8rem;align-items:flex-start;background:#fff;border:3px solid var(--ink);border-radius:16px;padding:.9rem 1.1rem;margin-bottom:.8rem;cursor:pointer;transition:background .2s}
+.goal:has(input:checked){background:var(--c3)}
+.goal:has(input:checked) span{text-decoration:line-through;text-decoration-thickness:2px}
+.goal input{width:1.4rem;height:1.4rem;margin-top:.2rem;accent-color:var(--ink);flex:none}
+.prog{display:flex;align-items:center;gap:.8rem;font-weight:700;margin-top:1rem}.prog .meter{flex:1;margin:0}.prog .meter i{width:0;transition:width .5s}
+.links{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem}
+.links .btn{margin:0;background:#fff}.links .btn:nth-child(2n){background:var(--c1)}.links .btn:nth-child(3n){background:var(--c4)}
+footer{padding:1rem 0 3rem;font-size:.9rem;opacity:.75}
+@media (max-width:720px){.hero{grid-template-columns:1fr}.panel{padding:1.5rem 1rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="top"><b>Muhammad Zaidan Azzaky Setyawan</b><button class="pal" id="pal" title="Ganti palet warna"><i><s style="background:var(--c1)"></s><s style="background:var(--c2)"></s><s style="background:var(--c3)"></s></i>Ganti warna</button></div>
+
+<main>
+<div class="hero">
+  <div>
+    <p class="hi">Halo, saya</p>
+    <h1 id="nama" aria-label="Nama Kamu">Zaid</h1>
+    <p class="type" id="type" aria-live="off">Saya mahasiswa Teknologi Rekayasa Elektro.</p>
+    <a class="btn b2" href="#kontak">Ajak ngobrol</a>
+  </div>
+  <div class="stage">
+    <aside class="id" aria-label="Kartu mahasiswa">
+      <div class="bar"><span>KARTU MAHASISWA</span><span>2026</span></div>
+      <div class="row">
+        <label class="avatar" title="Klik untuk mengunggah foto"><span id="ph">+ Tambah foto</span><img id="foto" alt="Foto profil" hidden><input type="file" id="pilih" class="sr" accept="image/*" aria-label="Unggah foto profil"></label>
+        <dl><dt>Nama</dt><dd>Muhammad Zaidan Azzaky Setyawan</dd><dt>Program studi</dt><dd>Teknologi Rekayasa Elektro</dd><dt>Kampus</dt><dd>Universitas Gadjah Mada</dd></dl>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<section class="panel p1" id="tentang">
+  <h2>Kenali saya</h2>
+  <div class="chips" role="group" aria-label="Pilih topik">
+    <button data-t="Menonton film, mempelajari mesuatu, Bermain game." aria-pressed="true">Hobi</button>
+    <button data-t="Ayam geprek, nasi goreng, soto.">Makanan</button>
+    <button data-t="The weeknd, ariana grande.">Playlist</button>
+    <button data-t="Jadilah orang yang bermanfaat bagi sendiri dan sekitar.">Motto</button>
+  </div>
+  <p class="card say" id="say">Tulis hobimu di sini, misalnya fotografi, naik gunung, atau main gim strategi.</p>
+</section>
+
+<section class="panel p3" id="belajar">
+  <h2>Yang sedang saya pelajari</h2>
+  <div class="grid">
+    <div id="skills">
+      <div class="skill"><div class="l"><span>Critical Thinking: Mampu mengevaluasi informasi dan mempertimbangkan berbagai alternatif sebelum mengambil keputusan.</span><span>Menengah</span></div><div class="meter"><i style="--w:56%"></i></div></div>
+      <div class="skill"><div class="l"><span>Adaptability: Mampu menyesuaikan diri dengan lingkungan dan situasi baru.</span><span>Menengah</span></div><div class="meter"><i style="--w:56%"></i></div></div>
+      <div class="skill"><div class="l"><span>Microsoft Word: Mampu membuat, mengedit, serta memformat dokumen.</span><span>Menengah</span></div><div class="meter"><i style="--w:56%"></i></div></div>
+      <div class="skill"><div class="l"><span>Python Programming: Memahami dasar pemrograman Python, termasuk percabangan dan penanganan kesalahan.</span><span>Pemula</span></div><div class="meter"><i style="--w:35%"></i></div></div>
+    </div>
+    <div class="card"><h3>Sumber belajar</h3><p>Saya terus mengembangkan pengetahuan dan keterampilan melalui berbagai sumber pembelajaran, mulai dari perkuliahan, bimbingan belajar online melalui Gradient, hingga pembelajaran mandiri dengan memanfaatkan YouTube dan model kecerdasan buatan (AI). Saya menggunakan berbagai sumber tersebut untuk memperdalam pemahaman materi, mengeksplorasi hal-hal baru, dan meningkatkan kemampuan berpikir kritis. Bagi saya, belajar merupakan proses berkelanjutan untuk terus berkembang, beradaptasi, dan mempersiapkan diri menghadapi tantangan di masa depan.</p></div>
+  </div>
+</section>
+
+<section class="panel p4" id="riwayat">
+  <h2>Perjalanan saya</h2>
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-k="pend">Pendidikan</button>
+  </div>
+  <div class="list" id="pend">
+    <details class="card" open><summary><b>2026 – kini</b>D4 Teknologi Rekayasa Elektro, Universitas Gadjah Mada</summary><p></p></details>
+    <details class="card"><summary><b>2023 – 2026</b>SMA Negeri 06 Palembang, IPA</summary><p>.</p></details>
+    <details class="card"><summary><b>2020 – 2023</b>SMP IT Al-Furqon Palembang</summary><p></p></details>
+  </div>
+  <div class="list" id="peng" hidden>
+    <details class="card" open><summary><b>2025</b>[Posisi], [Organisasi / Perusahaan]</summary><p>Tanggung jawabmu dan hasil nyata yang dicapai, kalau bisa dengan angka.</p></details>
+    <details class="card"><summary><b>2024</b>[Posisi], [Kepanitiaan / Organisasi]</summary><p>Peran dan apa yang kamu pelajari.</p></details>
+    <details class="card"><summary><b>2023</b>[Lomba / Sertifikasi / Relawan]</summary><p>Penyelenggara dan pencapaiannya.</p></details>
+  </div>
+</section>
+
+<section class="panel p5" id="goals">
+  <h2>Goals saya</h2>
+  <p>Centang kalau sudah tercapai.</p>
+  <label class="goal"><input type="checkbox"><span><b>Tahun ini:</b> Lulus mata kuliah inti dan mendapatkan IPK > 3.5.</span></label>
+  <label class="goal"><input type="checkbox"><span><b>3 tahun lagi:</b> Mendapat pekerjaan impian (BUMN) atau lanjut S2.</span></label>
+  <label class="goal"><input type="checkbox"><span><b>Jangka panjang:</b> Menjadi pribadi yang kompeten, mandiri, dan berintegritas, membangun karier yang baik, serta mampu memberikan kontribusi positif bagi masyarakat melalui ilmu, pengalaman, dan keterampilan yang saya kembangkan selama kuliah.</span></label>
+  <div class="prog"><span id="pt">0 dari 3 tercapai</span><div class="meter"><i id="pb"></i></div></div>
+</section>
+
+
+<section class="panel p6" id="kontak">
+  <h2>Mari terhubung</h2>
+  <p>Terbuka untuk magang, kolaborasi proyek, atau sekadar ngobrol.</p>
+
+  <div class="links">
+    <button
+      class="btn"
+      id="salin"
+      data-e="muhammadzaidanazzakysetyawan@mail.ugm.ac.id">
+      Salin Email
+    </button>
+
+    <a
+      class="btn"
+      href="https://www.linkedin.com/in/username/"
+      target="_blank"
+      rel="noopener noreferrer">
+      LinkedIn
+    </a>
+
+    <a
+      class="btn"
+      href="https://www.instagram.com/dzayy___/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Instagram
+    </a>
+  </div>
+</section>
+
+</main>
+<footer>
+  © 2026 Zaidan Azzaky · Personal Website
+</footer>
+</div>
+<script>
+(function(){
+var R=document.documentElement,$=function(s,c){return(c||document).querySelector(s)},$$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+/* huruf nama */
+var n=$('#nama'),t=n.textContent;n.textContent='';
+t.split('').forEach(function(ch,i){var s=document.createElement('span');s.textContent=ch===' '?'\u00a0':ch;s.style.setProperty('--i',i);s.setAttribute('aria-hidden','true');n.appendChild(s)});
+/* mesin ketik */
+var W=['mahasiswa Teknologi Rekayasa Elektro.','sedang mempelajari bidang seputar elektro.','suka mencoba hal-hal baru.','mencari kesempatan magang.'],ty=$('#type'),wi=0,ci=0,del=false;
+function tick(){var w=W[wi];ci+=del?-1:1;ty.textContent='Saya '+w.slice(0,ci);var d=del?30:70;
+if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;wi=(wi+1)%W.length;d=350}setTimeout(tick,d)}
+if(!still)tick();
+/* palet */
+var P=0;try{P=+localStorage.getItem('pal')||0}catch(e){}
+function setP(){if(P)R.setAttribute('data-pal',P);else R.removeAttribute('data-pal')}setP();
+$('#pal').onclick=function(){P=(P+1)%4;setP();try{localStorage.setItem('pal',P)}catch(e){}};
+/* kenali saya */
+$$('.chips button').forEach(function(b){b.onclick=function(){$$('.chips button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');$('#say').textContent=b.dataset.t}});
+/* kartu balik */
+$$('.flip').forEach(function(b){b.onclick=function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')}});
+/* meter */
+var sk=$('#skills');if('IntersectionObserver'in window){new IntersectionObserver(function(e,o){if(e[0].isIntersecting){sk.classList.add('go');o.disconnect()}},{threshold:.3}).observe(sk)}else sk.classList.add('go');
+/* tab */
+$$('.tabs button').forEach(function(b){b.onclick=function(){$$('.tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});['pend','peng'].forEach(function(k){$('#'+k).hidden=k!==b.dataset.k})}});
+/* goals */
+var gs=$$('.goal input');function upd(){var c=gs.filter(function(g){return g.checked}).length;$('#pb').style.width=(c/gs.length*100)+'%';$('#pt').textContent=c===gs.length?'Semua tercapai. Mantap!':c+' dari '+gs.length+' tercapai'}
+gs.forEach(function(g){g.onchange=upd});
+/* salin email */
+$('#salin').onclick=function(){var b=this,e=b.dataset.e;function ok(){b.textContent='Tersalin!';setTimeout(function(){b.textContent='Salin email'},1600)}
+try{navigator.clipboard.writeText(e).then(ok,function(){b.textContent=e})}catch(x){b.textContent=e}};
+/* foto kartu */
+var ph=$('#ph'),img=$('#foto'),inp=$('#pilih'),K='fotoKartu';
+function show(s){img.src=s;img.hidden=false;ph.hidden=true}
+try{var s=localStorage.getItem(K);if(s)show(s)}catch(e){}
+inp.addEventListener('change',function(){var f=inp.files&&inp.files[0];if(!f)return;var r=new FileReader();
+r.onload=function(){var im=new Image();im.onload=function(){var sc=Math.min(1,480/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*sc);c.height=Math.round(im.height*sc);c.getContext('2d').drawImage(im,0,0,c.width,c.height);var d=c.toDataURL('image/jpeg',.85);show(d);try{localStorage.setItem(K,d)}catch(e){}};im.src=r.result};r.readAsDataURL(f)});
+})();
+</script>
+</body>
+</html>
